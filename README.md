@@ -27,7 +27,7 @@ nvm install 18.20.8
 3. Mettre le contenu du fichier `/dist`sur le serveur Infomaniak, de préférence en utilisant la méthode `rsync`: 
 
 ```
-rsync -avz --delete ./out/ [identifiant ssh]:~/sites/head-digital-pool.ch
+rsync -avz --delete ./dist/ [identifiant ssh]:~/sites/cms.head-digital-pool.ch
 ```
 
 4. Ne pas oublier de pousser la nouvelle version du code dans le Github commun:
@@ -36,5 +36,12 @@ rsync -avz --delete ./out/ [identifiant ssh]:~/sites/head-digital-pool.ch
 git add.
 Git commit -m "[Nature du changement ici]"
 Git push origin main
+
+```
+
+## Pour accéder à la plateforme de commande Sanity
+
+```
+https://www.sanity.io/login
 
 ```
