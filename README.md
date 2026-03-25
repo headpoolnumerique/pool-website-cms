@@ -18,8 +18,7 @@ nvm install 18.20.8
 ```
 
 4. Installer les dépendances du package json (`npm install --save`)
-5. Commenter le `output: "export",` dans le `next.config.mjs`
-6. Lancer la commande `npm run dev`
+5. Lancer la commande `npm run dev`
 
 
 ## Comment mettre en ligne une nouvell version du front-end
