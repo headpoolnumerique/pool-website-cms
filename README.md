@@ -1,12 +1,41 @@
-# Sanity Blogging Content Studio
+# 25.03.2026 : Step by step 
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+## Comment lancer le cms du Pool sur son local
 
-Now you can do the following things:
+1. Cloner le repository Github 
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- Check out the example frontend: [React/Next.js](https://github.com/sanity-io/tutorial-sanity-blog-react-next)
-- [Read the blog post about this template](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
-# pool-num-rique-cms
+```
+git clone https://github.com/headpoolnumerique/pool-website-cms.git
+git checkout main
+```
+
+2. Ajouter dans le root folder les fichiers `sanity.config.js` et `sanity.cli.js` trouvable dans le Teams privé du Pool
+3. S'assure que `node v18.20.8` est installé. Si non:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 18.20.8
+```
+
+4. Installer les dépendances du package json (`npm install --save`)
+5. Commenter le `output: "export",` dans le `next.config.mjs`
+6. Lancer la commande `npm run dev`
+
+
+## Comment mettre en ligne une nouvell version du front-end
+
+1. Lancer la commande `npm run build`
+3. Mettre le contenu du fichier `/dist`sur le serveur Infomaniak, de préférence en utilisant la méthode `rsync`: 
+
+```
+rsync -avz --delete ./out/ [identifiant ssh]:~/sites/head-digital-pool.ch
+```
+
+4. Ne pas oublier de pousser la nouvelle version du code dans le Github commun:
+
+```
+git add.
+Git commit -m "[Nature du changement ici]"
+Git push origin main
+
+```
