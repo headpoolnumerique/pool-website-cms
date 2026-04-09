@@ -42,6 +42,6 @@ Git push origin main
 ## Pour accéder à la plateforme de commande Sanity
 
 ```
-https://www.sanity.io/login
+https://cms.head-digital-pool.ch
 
 ```
